@@ -1,0 +1,12 @@
+<% if @user.links.any? %>
+  <h4>Here are your links:</h4>
+  <ol>
+    <%= @user.links.each do |link| %>
+      <li><a href="<%=link.url%>">(<%= link.url %>)</a></li>
+    <% end %>
+  </ol>
+<% else %>
+  <p>There are no links yet!</p>
+<% end %>
+
+<p><%= link_to "New Link", new_user_link_path(@user) %></p>
